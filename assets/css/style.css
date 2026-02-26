@@ -1,0 +1,175 @@
+/* ── Dot-grid hero background ── */
+.dot-grid {
+  background-image: radial-gradient(
+    rgba(0, 212, 255, 0.12) 1px,
+    transparent 1px
+  );
+  background-size: 32px 32px;
+}
+
+/* ── Glowing card border on hover ── */
+.glow-card:hover {
+  box-shadow:
+    0 0 24px rgba(0, 212, 255, 0.15),
+    inset 0 0 0 1px rgba(0, 212, 255, 0.4);
+}
+
+.glow-card-orange:hover {
+  box-shadow:
+    0 0 24px rgba(255, 153, 0, 0.15),
+    inset 0 0 0 1px rgba(255, 153, 0, 0.4);
+}
+
+/* ── Skill badge ── */
+.skill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  background: rgba(0, 212, 255, 0.07);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 6px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  transition: all 0.25s ease;
+}
+
+.skill-badge:hover {
+  background: rgba(0, 212, 255, 0.15);
+  border-color: rgba(0, 212, 255, 0.5);
+  color: #e2e8f0;
+  transform: translateY(-2px);
+}
+
+.skill-badge-orange {
+  background: rgba(255, 153, 0, 0.07);
+  border-color: rgba(255, 153, 0, 0.2);
+}
+
+.skill-badge-orange:hover {
+  background: rgba(255, 153, 0, 0.15);
+  border-color: rgba(255, 153, 0, 0.5);
+}
+
+/* ── Scroll reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.reveal-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.reveal-delay-3 {
+  transition-delay: 0.3s;
+}
+
+.reveal-delay-4 {
+  transition-delay: 0.4s;
+}
+
+/* ── Typing cursor ── */
+.cursor::after {
+  content: "|";
+  animation: blink 1s step-end infinite;
+  color: #00d4ff;
+  font-weight: 100;
+}
+
+/* ── Nav link active state ── */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #00d4ff;
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ── Project card ── */
+.project-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #00d4ff, transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080f1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e3a5f;
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00d4ff;
+}
+
+/* ── Gradient text ── */
+.gradient-text {
+  background: linear-gradient(135deg, #00d4ff 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Soft skill card ── */
+.soft-card {
+  position: relative;
+  padding: 20px;
+  background: rgba(13, 26, 45, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.soft-card:hover {
+  border-color: rgba(0, 212, 255, 0.3);
+  transform: translateY(-4px);
+}
