@@ -2,7 +2,7 @@
 
 > Personal portfolio website for **Ahourdet Donambi Thierry** — AWS Certified Data Engineer & ML Researcher based in Kigali, Rwanda.
 
-🔗 **Live Site:** `https://yourportfolio.com` *(update with your deployed URL)*
+🔗 **Live Site:** `https://elthiero.github.io/` *(update with your deployed URL)*
 
 ---
 
