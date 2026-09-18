@@ -1,153 +1,63 @@
 # Thierry Donambi — Personal Portfolio
 
-> Personal portfolio website for **Ahourdet Donambi Thierry** — AWS Certified Data Engineer & ML Researcher based in Kigali, Rwanda.
+Personal portfolio site for **Ahourdet Donambi Thierry**, Data Engineer based in Kigali, Rwanda.
 
-🔗 **Live Site:** `https://elthiero.github.io/` *(update with your deployed URL)*
-
----
-
-## 📋 Table of Contents
-
-- [Thierry Donambi — Personal Portfolio](#thierry-donambi--personal-portfolio)
-  - [📋 Table of Contents](#-table-of-contents)
-  - [Overview](#overview)
-  - [Features](#features)
-  - [Tech Stack](#tech-stack)
-  - [Project Structure](#project-structure)
-  - [Getting Started](#getting-started)
-  - [Customization](#customization)
-  - [Deployment](#deployment)
-  - [License](#license)
+🔗 **Live site:** https://elthiero.github.io/
 
 ---
 
 ## Overview
 
-A single-page portfolio built with pure HTML, Tailwind CSS (CDN), and vanilla JavaScript. No build tools, no frameworks, no dependencies to install — just open and go. Designed to showcase technical skills, engineering projects, academic background, and professional credentials to potential employers and research collaborators.
+A four-page static site built with plain HTML, CSS, and a small amount of vanilla JavaScript. No build tools, no frameworks, no dependencies to install — open a page and go.
 
----
+## Pages
 
-## Features
+| Page | Purpose |
+|---|---|
+| `index.html` | Home — hero, short intro, two featured pipelines |
+| `projects.html` | Full project list: pipelines, applied systems, smaller experiments |
+| `about.html` | Bio, stack, work history, education |
+| `contact.html` | Contact links and CV |
 
-- ⚡ **Zero build step** — single HTML file, works offline
-- 🎨 **Scroll-reveal animations** — sections fade in via `IntersectionObserver`
-- 📌 **Sticky glass navbar** — blur effect on scroll with active section highlighting
-- 📱 **Fully responsive** — mobile hamburger menu, fluid grid layouts
-- 🏷️ **Skill badge system** — interactive chips replacing plain lists
-- 🌑 **Dark theme** — custom dot-grid hero, ambient glow effects, cyan + orange accent palette
-- ♿ **Accessible** — semantic HTML5 landmarks, `lang` attribute, `title` attributes on icon links
-
----
-
-## Tech Stack
-
-| Layer     | Technology                                         |
-| --------- | -------------------------------------------------- |
-| Markup    | HTML5                                              |
-| Styling   | Tailwind CSS (CDN) + custom CSS                    |
-| Fonts     | Syne, Space Grotesk, JetBrains Mono (Google Fonts) |
-| Icons     | Font Awesome 6                                     |
-| Scripting | Vanilla JavaScript (ES6+)                          |
-| Hosting   | *(see [Deployment](#deployment))*                  |
-
----
-
-## Project Structure
+## Structure
 
 ```text
-portfolio/
-├── index.html              # Main (and only) page
-├── README.md               # This file
-└── assets/
-    ├── img/
-    │   └── favicon.ico     # Browser tab icon
-    ├── css/
-    │   └── style.css       # CSS styling
-    ├── js/
-    │   └── main.js         #JS script
-    └── documents/
-        └── CV.pdf          # Downloadable résumé
+.
+├── index.html
+├── about.html
+├── projects.html
+├── contact.html
+├── css/style.css
+├── js/script.js           # terminal boot-log animation on the home page
+└── assets/documents/CV.pdf
 ```
-
----
-
-## Getting Started
-
-No installation or build process required.
-
-**Option 1 — Open directly in browser:**
-
-```bash
-# Clone the repo
-git clone https://github.com/Elthiero/elthiero.github.io.git
-cd portfolio
-
-# Open in your default browser
-open index.html          # macOS
-start index.html         # Windows
-xdg-open index.html      # Linux
-```
-
-**Option 2 — Serve locally** *(recommended to avoid asset path issues)*:
-
-```bash
-# With Python
-python -m http.server 3000
-
-# With Node.js
-npx serve .
-```
-
-Then visit `http://localhost:3000`.
-
----
 
 ## Customization
 
-All content lives inside `index.html`. Key areas to update:
+- **Content**: each page is plain HTML — edit the relevant section directly.
+- **Nav/footer**: repeated across all four files (no build step, so no shared partial); update all four when changing site-wide links.
+- **Colors, type, spacing**: `css/style.css`, using CSS custom properties defined at the top of the file.
+- **CV**: replace `assets/documents/CV.pdf`, referenced from the home page and contact page.
 
-| What            | Where in `index.html`                                              |
-| --------------- | ------------------------------------------------------------------ |
-| Name & headline | Hero `<section>` — `<h1>` and `<h2>` tags                          |
-| Bio paragraph   | Hero `<p>` description block                                       |
-| Social links    | Hero social icons + footer links                                   |
-| CV file         | `href="./assets/documents/CV.pdf"` (×2)                            |
-| Skills          | `#skills` section — add/remove `<span class="skill-badge">` chips  |
-| Projects        | `#projects` section — duplicate/edit a project card block          |
-| Education       | `#academic` section — edit degree cards                            |
-| Contact email   | `href="mailto:..."` in hero and contact section                    |
-| Accent colors   | `tailwind.config` block — `cyanAccent`, `awsOrange` values         |
-| Fonts           | Google Fonts `<link>` in `<head>` + `tailwind.config` `fontFamily` |
+## Local preview
 
----
+```bash
+python -m http.server 8080
+# then open http://localhost:8080
+```
 
 ## Deployment
 
-The site is a static file and can be deployed anywhere that serves HTML.
-
-**Recommended free options:**
-
-| Platform             | Steps                                                                      |
-| -------------------- | -------------------------------------------------------------------------- |
-| **GitHub Pages**     | Push to `main`, enable Pages in repo Settings → Pages → Deploy from branch |
-| **Netlify**          | Drag & drop the project folder at `netlify.com/drop`                       |
-| **Vercel**           | `npx vercel` in the project directory                                      |
-| **Cloudflare Pages** | Connect your GitHub repo in the Cloudflare dashboard                       |
-
-> **Tip:** After deploying, update the `<meta name="description">` tag and add an `<link rel="canonical">` tag pointing to your live URL for better SEO.
-
----
+Served directly via GitHub Pages from `main`.
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
-
-You're welcome to use this as a template — if you do, a credit link back is appreciated but not required.
+MIT — see [LICENSE](LICENSE).
 
 ---
 
 <p align="center">
-  Designed & built by <strong>Ahourdet Donambi Thierry</strong> · Kigali, Rwanda
+  Thierry Donambi · Kigali, Rwanda
   <br>
   <a href="https://github.com/Elthiero">GitHub</a> ·
   <a href="https://www.linkedin.com/in/thierry-donambi/">LinkedIn</a> ·
